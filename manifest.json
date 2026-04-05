@@ -17,13 +17,13 @@
         "https://pointi.jp/contents/magazine/*"
       ],
       "exclude_matches": [
-        "https://pointi.jp/contents/magazine/*/detail.php"
+        "https://pointi.jp/contents/magazine/*/detail.php*"
       ],
       "js": ["open.js"]
     },
     {
       "matches": [
-        "https://pointi.jp/contents/magazine/*/detail.php"
+        "https://pointi.jp/contents/magazine/*/detail.php*"
       ],
       "js": ["article.js"]
     },
