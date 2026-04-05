@@ -1,40 +1,49 @@
 {
-    "manifest_version": 3,
-    "name": "PointiFlow",
-    "description": "ポイントインカムの一部自動化拡張機能",
-    "version": "1.00",
-    "permissions": ["tabs"],
-    "host_permissions": [
-        "https://pointi.jp"
-    ],
-    "background": {
-        "service_worker": "background.js"
+  "manifest_version": 3,
+  "name": "PointiFlow",
+  "description": "ポイントインカムの一部自動化拡張機能",
+  "version": "1.00",
+  "permissions": ["tabs"],
+  "host_permissions": [
+    "https://pointi.jp/*",
+    "https://pi2.biishiki-lab.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://pointi.jp/contents/magazine/*"
+      ],
+      "exclude_matches": [
+        "https://pointi.jp/contents/magazine/*/detail.php"
+      ],
+      "js": ["open.js"]
     },
-    "content_scripts": [
-        {
-            "matches": [
-                "https://pointi.jp/contents/magazine/*/",
-                "https://pointi.jp/contents/magazine/*/?page=*"
-            ],
-            "js": ["open.js"]
-        },
-        {
-            "matches": ["https://pointi.jp/contents/magazine/*/datail.php"],
-            "js": ["article.js"]
-        },
-        {
-            "matches": ["https://pointi.jp/dairy.php*"],
-            "js": ["daily.js"]
-        },
-        {
-            "matches": ["https://pi2.biishiki-lab.com/ot_ans/*"],
-            "js": ["survey.js"]
-        }
-    ],
-    "icons": {
-        "16": "icon/icon16.png",
-        "48": "icon/icon48.png",
-        "128": "icon/icon128.png"
+    {
+      "matches": [
+        "https://pointi.jp/contents/magazine/*/detail.php"
+      ],
+      "js": ["article.js"]
     },
-    "author": "ryo_001339"
+    {
+      "matches": [
+        "https://pointi.jp/daily.php*"
+      ],
+      "js": ["daily.js"]
+    },
+    {
+      "matches": [
+        "https://pi2.biishiki-lab.com/ot_ans/*"
+      ],
+      "js": ["survey.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon/icon16.png",
+    "48": "icon/icon48.png",
+    "128": "icon/icon128.png"
+  },
+  "author": "ryo_001339"
 }
