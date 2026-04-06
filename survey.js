@@ -1,4 +1,4 @@
-// お楽しみアンケートの自動回答
+// お楽しみアンケート自動回答
 const DELAY_MS = 300;
 
 function getNextButton() {
@@ -14,7 +14,7 @@ function groupByName(inputs) {
   return groups;
 }
 
-// 全選択防止のためにcheckboxの場合は処理分ける
+// 全選択防止のためにcheckboxのは処理わける
 function groupByParent(inputs) {
   const groups = {};
   inputs.forEach((input) => {
@@ -37,7 +37,6 @@ function selectRandomInputs() {
   });
 }
 
-// 応募券獲得コードの入力
 function fillApplicationCode() {
   const codes = Array.from(document.querySelectorAll('span[style*="color: #ff0000"]'))
     .map((s) => s.textContent.trim())
@@ -58,6 +57,7 @@ function tabClose() {
 function autoAnswer() {
   const nextBtn = getNextButton();
 
+  // 次へがなければタブ閉じ
   if (!nextBtn) {
     tabClose();
     return;

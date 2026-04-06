@@ -22,15 +22,11 @@
       "js": ["open.js"]
     },
     {
-      "matches": [
-        "https://pointi.jp/contents/magazine/*/detail.php*"
-      ],
+      "matches": ["https://pointi.jp/contents/magazine/*/detail.php*"],
       "js": ["article.js"]
     },
     {
-      "matches": [
-        "https://pointi.jp/daily.php*"
-      ],
+      "matches": ["https://pointi.jp/daily.php*"],
       "js": ["daily.js"]
     },
     {

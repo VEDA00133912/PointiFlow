@@ -1,4 +1,5 @@
-// magazineページで記事開くやつ。開いたのは要素消していく
+// magazineページで記事開くやつ。開いたのは要素を消す
+
 const OPEN_INTERVAL_MS = 2000;
 
 function getArticleLinks() {
@@ -8,7 +9,7 @@ function getArticleLinks() {
 function openNextArticle() {
   const links = getArticleLinks();
 
-  // リンクなくなったら次ページに行く
+  // リンクなくなったら次のページへ
   if (links.length === 0) {
     goNextPage();
     return;
